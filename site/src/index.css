@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; color-scheme: light; }
+  html, body { overflow-x: clip; }
+  body { @apply bg-paper text-ink font-sans antialiased; font-size: 16.5px; line-height: 1.6; }
+  ::selection { background: #DCF0EA; color: #10262A; }
+  :focus-visible { outline: 2px solid #0F7C6B; outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3 { font-family: "Tilt Neon", system-ui, sans-serif; font-weight: 400; letter-spacing: -0.02em; }
+  /* Tilt Neon n'a pas d'italique : pas de faux italique sur les titres */
+  h1 em, h2 em, h3 em, .font-display, .font-display em { font-style: normal; font-synthesis: none; }
+  img { max-width: 100%; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10; }
+  .eyebrow { @apply inline-flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.18em] text-cross-deep; }
+  .eyebrow::before { content: ""; @apply inline-block h-[7px] w-[7px] rounded-[1px] bg-cross; clip-path: polygon(35% 0,65% 0,65% 35%,100% 35%,100% 65%,65% 65%,65% 100%,35% 100%,35% 65%,0 65%,0 35%,35% 35%); }
+  .h-sec { @apply text-[clamp(2.5rem,5.6vw,5rem)] leading-[0.98]; text-wrap: balance; }
+  .todo { @apply rounded-md bg-peach/70 px-1.5 py-0.5 font-mono text-[0.78em] text-[#7A4B22]; -webkit-box-decoration-break: clone; box-decoration-break: clone; overflow-wrap: anywhere; }
+  .btn { @apply inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-[15px] font-medium transition-[background,color,box-shadow,transform] duration-300; }
+  .btn-main { @apply btn bg-ink text-white hover:bg-cross-deep; }
+  .btn-green { @apply btn bg-cross text-white hover:bg-cross-deep; }
+  .btn-line { @apply btn border border-ink/15 bg-white/60 text-ink backdrop-blur hover:border-ink/40; }
+  .split-line { overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+}
+
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+.grain::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

@@ -1,0 +1,41 @@
+# ── Dépendances (réinstallées avec « npm install ») ──
+node_modules/
+
+# ── Build (régénéré avec « npm run build » ou par l'hébergeur) ──
+dist/
+dist-ssr/
+*.local
+
+# ── Variables d'environnement : ne jamais publier ──
+# (voir site/.env.example ; sur l'hébergeur, définir SITE_URL dans ses réglages)
+.env
+.env.*
+!.env.example
+
+# ── Photos sources non utilisées par le site ──
+# Le site n'utilise que les versions optimisées .webp de src/assets/.
+# Les originaux (WhatsApp, captures PNG, anciennes images IA) restent sur ton PC.
+site/src/assets/*.jpg
+site/src/assets/*.jpeg
+site/src/assets/*.png
+
+# ── Journaux et caches ──
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+.vite/
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# ── Éditeurs et système ──
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.claude/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
