@@ -7,8 +7,8 @@ import NumberTicker from "./ui/NumberTicker";
 const facts = [
   { v: site.horaires.filter((h) => h.plages).length, suffix: " j / 7", t: "Ouverts du lundi au samedi" },
   { v: weeklyHours(), suffix: " h", t: "D'ouverture chaque semaine" },
-  { v: site.nbPharmaciens, suffix: "", t: "Pharmaciens à votre écoute" },
-  { v: 0, suffix: " €", t: "Frais de livraison à domicile" },
+  { v: site.nbEquipe, suffix: "", t: "Membres de l'équipe à votre écoute" },
+  { v: 0, suffix: " €", t: "Frais de livraison à proximité" },
 ];
 
 export default function Facts() {

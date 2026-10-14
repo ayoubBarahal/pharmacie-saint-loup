@@ -10,7 +10,7 @@ const T = ({ children }: { children: ReactNode }) => <span className="todo white
 
 const content: Record<Exclude<LegalKey, null>, { title: string; body: ReactNode }> = {
   legal: { title: "Mentions légales", body: (<>
-    <h4>Éditeur du site</h4><p>Raison sociale : <T>[À compléter]</T> · Forme juridique et capital : <T>[À compléter]</T> · SIRET : <T>[À compléter]</T> · {site.adresse.rue}, {site.adresse.cp} {site.adresse.ville} · {site.telephone.affichage}.</p>
+    <h4>Éditeur du site</h4><p>Raison sociale : <T>[À compléter]</T> · Forme juridique et capital : <T>[À compléter]</T> · SIRET : <T>[À compléter]</T> · {site.adresse.rue}, {site.adresse.cp} {site.adresse.ville} · {site.telephone.affichage}{site.email && <> · {site.email}</>}.</p>
     <h4>Pharmacien titulaire</h4><p>Soufiane Ouârab · N° RPPS : <T>[À compléter]</T> · Inscription à l'Ordre national des pharmaciens, section A.</p>
     <h4>Licence et autorités</h4><p>N° de licence : <T>[À compléter]</T> · Agence Régionale de Santé Centre-Val de Loire · Ordre national des pharmaciens.</p>
     <h4>Directeur de la publication</h4><p><T>[À compléter]</T></p>
@@ -19,8 +19,7 @@ const content: Record<Exclude<LegalKey, null>, { title: string; body: ReactNode 
   </>) },
   privacy: { title: "Confidentialité", body: (<>
     <p>Les données saisies dans le formulaire de contact (nom, coordonnées, message) servent uniquement à répondre à votre demande. Elles ne sont ni vendues ni cédées.</p>
-    <h4>Responsable du traitement</h4><p><T>[À compléter]</T></p>
-    <h4>Durée de conservation</h4><p><T>[À compléter]</T></p>
+    <h4>Responsable du traitement</h4><p>Soufiane Ouârab, pharmacien titulaire.</p>
     <h4>Vos droits</h4><p>Droit d'accès, de rectification et d'effacement, à exercer auprès de la pharmacie. Réclamation possible auprès de la CNIL.</p>
     <h4>Données de santé</h4><p>Ce formulaire n'est pas conçu pour recevoir des données de santé. Merci de ne pas y transmettre d'ordonnance ni d'information médicale.</p>
   </>) },
@@ -58,7 +57,7 @@ export default function Footer({ onLegal }: { onLegal: (k: LegalKey) => void }) 
       <div className="wrap grid gap-12 pb-16 sm:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Logo />
-          <p className="mt-5 max-w-[34ch] text-[14.5px] text-muted">Pharmacie à Saint-Jean-de-Braye, près d'Orléans : conseil, parapharmacie, vaccination, téléconsultation et livraison gratuite à domicile.</p>
+          <p className="mt-5 max-w-[34ch] text-[14.5px] text-muted">Pharmacie à Saint-Jean-de-Braye, près d'Orléans : conseil, parapharmacie, vaccination, téléconsultation et livraison gratuite à domicile à proximité.</p>
         </div>
         <div className="lg:col-span-2">
           <h4 className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-muted">Navigation</h4>
@@ -69,6 +68,7 @@ export default function Footer({ onLegal }: { onLegal: (k: LegalKey) => void }) 
           <ul className="mt-4 grid gap-2.5 text-[14.5px]">
             <li>{site.adresse.rue}<br />{site.adresse.cp} {site.adresse.ville}</li>
             <li><a href={site.telephone.lien} className="hover:text-cross">{site.telephone.affichage}</a></li>
+            {site.email && <li><a href={`mailto:${site.email}`} className="hover:text-cross">{site.email}</a></li>}
             <li><a href={site.googleMaps} target="_blank" rel="noopener" className="underline underline-offset-4 hover:text-cross">Voir sur Google Maps</a></li>
           </ul>
         </div>

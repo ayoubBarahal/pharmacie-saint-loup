@@ -1,16 +1,18 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Check, Loader2, Mail, MapPin, Phone, ShieldAlert, Share2 } from "lucide-react";
+import { ArrowRight, Check, Loader2, Mail, MapPin, Phone, ShieldAlert, Share2, X } from "lucide-react";
 import { useEffect, useState, type FormEvent } from "react";
 import { site } from "../data/site";
 import { cn } from "../lib/cn";
 
 type Errors = Partial<Record<"nom" | "coord" | "msg" | "rgpd", string>>;
+// Clé d'accès Web3Forms (web3forms.com) : les messages sont envoyés à l'adresse e-mail liée à cette clé.
+const FORM_KEY = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
 const subjects = ["Question générale", "Livraison à domicile", "Vaccination", "Téléconsultation", "Parapharmacie", "Autre"];
 
 export default function Contact({ onPrivacy }: { onPrivacy: () => void }) {
   const [v, setV] = useState({ nom: "", coord: "", objet: subjects[0], msg: "", rgpd: false });
   const [err, setErr] = useState<Errors>({});
-  const [state, setState] = useState<"idle" | "sending" | "done">("idle");
+  const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   useEffect(() => {
     const h = (e: Event) => setV((p) => ({ ...p, objet: (e as CustomEvent).detail }));
@@ -31,12 +33,33 @@ export default function Contact({ onPrivacy }: { onPrivacy: () => void }) {
     return Object.keys(e).length === 0;
   };
 
-  const submit = (e: FormEvent) => {
+  const submit = async (e: FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+    if (!FORM_KEY) return setState("error");
     setState("sending");
-    // Brancher ici l'envoi réel (API de la pharmacie, service de formulaires…).
-    setTimeout(() => setState("done"), 1000);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: FORM_KEY,
+          subject: `Site web — ${v.objet} — ${v.nom.trim()}`,
+          from_name: "Site Pharmacie Saint-Loup",
+          ...(v.coord.includes("@") ? { replyto: v.coord.trim() } : {}),
+          "Nom et prénom": v.nom.trim(),
+          "Téléphone ou e-mail": v.coord.trim(),
+          Objet: v.objet,
+          Message: v.msg.trim(),
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message);
+      setState("done");
+      setV({ nom: "", coord: "", objet: subjects[0], msg: "", rgpd: false });
+    } catch {
+      setState("error");
+    }
   };
 
   const field = "w-full rounded-2xl border bg-paper px-4 py-3.5 text-[16px] outline-none transition focus:border-cross focus:bg-white focus:ring-4 focus:ring-cross/10";
@@ -106,13 +129,15 @@ export default function Contact({ onPrivacy }: { onPrivacy: () => void }) {
           </div>
 
           <AnimatePresence>
-            {state === "done" && (
+            {(state === "done" || state === "error") && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 className="absolute inset-0 grid place-items-center bg-white/95 p-8 text-center backdrop-blur">
                 <motion.div initial={{ y: 20, scale: 0.96 }} animate={{ y: 0, scale: 1 }} transition={{ type: "spring", bounce: 0.3 }} className="max-w-[40ch]">
-                  <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-cross text-white"><Check size={28} /></span>
-                  <h3 className="mt-6 text-[2.2rem]">Message prêt.</h3>
-                  <p className="mt-3 text-muted">Ce formulaire n'est pas encore relié à une messagerie : rien n'a été transmis à la pharmacie. En attendant, appelez le {site.telephone.affichage}.</p>
+                  <span className={cn("mx-auto grid h-16 w-16 place-items-center rounded-full text-white", state === "done" ? "bg-cross" : "bg-[#B3261E]")}>{state === "done" ? <Check size={28} /> : <X size={28} />}</span>
+                  <h3 className="mt-6 text-[2.2rem]">{state === "done" ? "Message envoyé." : "Envoi impossible."}</h3>
+                  <p className="mt-3 text-muted">{state === "done"
+                    ? "Merci, la pharmacie a bien reçu votre message. Nous vous répondons pendant les horaires d'ouverture."
+                    : <>Votre message n'a pas pu être transmis. Réessayez dans un instant ou appelez-nous au {site.telephone.affichage}.</>}</p>
                   <button type="button" onClick={() => setState("idle")} className="btn-line mt-6">Revenir au formulaire</button>
                 </motion.div>
               </motion.div>

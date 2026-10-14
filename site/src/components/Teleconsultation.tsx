@@ -30,7 +30,7 @@ export default function Teleconsultation() {
         </div>
         <div className="lg:col-span-6 lg:col-start-7">
           <span className="eyebrow">Téléconsultation</span>
-          <h2 className="h-sec mt-5">Un médecin, <em className="italic text-cross">sur place.</em></h2>
+          <h2 className="h-sec mt-5">Un médecin, <em className="italic text-cross">par vidéo.</em></h2>
           <p className="mt-6 max-w-[46ch] text-[1.08rem] text-muted">
             Pas de médecin disponible ? Notre cabine de téléconsultation Medadom vous met en relation avec un médecin par vidéo, équipée d'instruments connectés pour un examen à distance.
           </p>

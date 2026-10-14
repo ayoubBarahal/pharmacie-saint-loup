@@ -41,7 +41,7 @@ export default function Delivery() {
             La pharmacie <em className="italic text-cross">vient à vous.</em>
           </h2>
           <p className="mt-7 max-w-[46ch] text-[1.08rem] text-muted">
-            Profitez de notre service de livraison gratuite à domicile pour plus de simplicité au quotidien. Contactez notre équipe pour connaître les modalités et organiser votre livraison.
+            Vous habitez à proximité de la pharmacie ? Profitez de notre service de livraison gratuite à domicile pour plus de simplicité au quotidien. Contactez notre équipe pour connaître les modalités et organiser votre livraison.
           </p>
 
           {/* trajet officine → domicile, tracé au défilement */}
@@ -73,7 +73,7 @@ export default function Delivery() {
               <span className="grid h-16 w-16 place-items-center rounded-2xl bg-white/15 backdrop-blur"><Truck size={30} /></span>
               <div>
                 <p className="font-display text-[clamp(2.4rem,4vw,3.6rem)] leading-[0.95] tracking-[-0.03em]">Livraison<br />gratuite<br />à domicile</p>
-                <p className="mt-5 flex items-start gap-2 text-[14.5px] text-white/80"><MapPin size={16} className="mt-0.5 shrink-0" />Depuis le {site.adresse.rue}, {site.adresse.ville}</p>
+                <p className="mt-5 flex items-start gap-2 text-[14.5px] text-white/80"><MapPin size={16} className="mt-0.5 shrink-0" />Pour les patients habitant à proximité de la pharmacie</p>
               </div>
             </div>
           </div>

@@ -2,25 +2,6 @@ import { HeartHandshake, MessagesSquare, Stethoscope } from "lucide-react";
 import { useRef } from "react";
 import interieur from "../assets/interieur.webp";
 import { gsap, prefersReduced, useGSAP } from "../lib/gsap";
-import Cross from "./ui/Cross";
-import Marquee from "./ui/Marquee";
-
-const words = ["Conseil personnalisé", "Parapharmacie", "Vaccination", "Livraison gratuite", "Prévention", "Dermocosmétique", "Écoute"];
-
-export function WordBand() {
-  return (
-    <div className="border-y border-line bg-white py-6" aria-hidden>
-      <Marquee duration="55s">
-        {words.map((w) => (
-          <span key={w} className="flex items-center gap-12 whitespace-nowrap font-display text-[clamp(1.8rem,3.6vw,3.2rem)] italic text-ink/85">
-            {w}<Cross className="h-4 w-4 text-cross" />
-          </span>
-        ))}
-      </Marquee>
-    </div>
-  );
-}
-
 const values = [
   { Icon: HeartHandshake, t: "Un accueil attentif", d: "Chaque client est reçu avec disponibilité et discrétion, au comptoir comme à l'écart." },
   { Icon: MessagesSquare, t: "Des conseils sur mesure", d: "Traitements, petits maux, soins de la peau : nos conseils partent de votre situation." },
@@ -44,7 +25,7 @@ export default function About() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="about-media relative aspect-[4/3] overflow-hidden rounded-[28px] lg:col-span-7">
-            <img src={interieur} alt="Intérieur de la Pharmacie Saint-Loup : rayons aux murs vert clair, soins et orthopédie" loading="lazy"
+            <img src={interieur} alt="Intérieur de la Pharmacie Saint-Loup : allées de rayons santé et soins, murs vert clair" loading="lazy"
               className="about-img absolute inset-0 h-full w-full object-cover object-[50%_55%]" />
           </div>
           <div className="flex flex-col justify-between gap-10 lg:col-span-5">

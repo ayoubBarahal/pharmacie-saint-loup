@@ -9,8 +9,8 @@ type Svc = { Icon: LucideIcon; t: string; d: string; more: string; ok: boolean; 
 
 const services: Svc[] = [
   { Icon: MessagesSquare, t: "Conseils pharmaceutiques personnalisés", d: "Explication de votre traitement, interactions, posologie, conseils pour les petits maux du quotidien.", more: "Nos pharmaciens vous reçoivent au comptoir ou à l'écart pour les questions plus personnelles. Pensez à apporter la liste de vos médicaments.", ok: true, cls: "lg:col-span-2 lg:row-span-2", big: true },
-  { Icon: Syringe, t: "Vaccination", d: "Un espace dédié pour vous faire vacciner sur place.", more: "Vaccins proposés et modalités : voir la section Espace vaccination.", ok: true, cls: "", href: "#vaccination" },
-  { Icon: Truck, t: "Livraison gratuite à domicile", d: "La pharmacie vient à vous.", more: "Contactez l'équipe pour organiser votre livraison.", ok: true, cls: "", href: "#livraison" },
+  { Icon: Syringe, t: "Vaccination", d: "Un espace dédié pour vous faire vacciner sur place.", more: "Vaccins proposés et modalités : voir la section Vaccination et dépistage.", ok: true, cls: "", href: "#vaccination" },
+  { Icon: Truck, t: "Livraison gratuite à domicile", d: "La pharmacie vient à vous.", more: "Pour les patients habitant à proximité de la pharmacie. Contactez l'équipe pour organiser votre livraison.", ok: true, cls: "", href: "#livraison" },
   { Icon: HeartPulse, t: "Prévention et accompagnement", d: "Hygiène de vie, suivi des traitements au long cours.", more: "Bilan de prévention sans rendez-vous, aux horaires d'ouverture de la pharmacie.", ok: true, cls: "" },
   { Icon: Droplets, t: "Conseil en dermocosmétique", d: "Un avis sur votre peau et une routine adaptée.", more: "CeraVe, La Roche-Posay, Avène, Klorane… : demandez conseil à l'équipe pour choisir une routine adaptée.", ok: true, cls: "" },
   { Icon: Leaf, t: "Hygiène et bien-être", d: "Soins du quotidien, sommeil, vitalité, confort.", more: "Retrouvez nos rayons dans la section Parapharmacie.", ok: true, cls: "lg:col-span-2", href: "#parapharmacie" },

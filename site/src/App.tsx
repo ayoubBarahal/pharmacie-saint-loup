@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-
 import Lenis from "lenis";
 import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
-import About, { WordBand } from "./components/About";
+import About from "./components/About";
 import Access from "./components/Access";
 import Contact from "./components/Contact";
 import Delivery from "./components/Delivery";
@@ -13,7 +13,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Parapharmacie from "./components/Parapharmacie";
 import Services from "./components/Services";
-import Team from "./components/Team";
 import Teleconsultation from "./components/Teleconsultation";
 import Vaccination from "./components/Vaccination";
 import SectionReveal from "./components/ui/SectionReveal";
@@ -84,10 +83,8 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <WordBand />
         <Facts />
         <About />
-        <Team />
         <Services />
         <Parapharmacie />
         <Delivery />

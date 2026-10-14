@@ -8,7 +8,7 @@ export const faq: { q: string; a: string }[] = [
   },
   {
     q: "Quels sont les horaires d'ouverture de la pharmacie ?",
-    a: "Du lundi au vendredi de 9h00 à 12h30 et de 14h15 à 19h30, le samedi de 9h00 à 12h30. La pharmacie est fermée le dimanche.",
+    a: "Du lundi au samedi de 9h00 à 12h30 et de 14h15 à 19h30. La pharmacie est fermée le dimanche.",
   },
   {
     q: "Peut-on se garer devant la pharmacie ?",
@@ -16,7 +16,7 @@ export const faq: { q: string; a: string }[] = [
   },
   {
     q: "La pharmacie livre-t-elle à domicile ?",
-    a: "Oui, la livraison à domicile est gratuite. Appelez-nous au 02 38 54 10 96 pour connaître les modalités et organiser votre livraison.",
+    a: "Oui, la livraison à domicile est gratuite pour les patients habitant à proximité de la pharmacie. Appelez-nous au 02 38 54 10 96 pour connaître les modalités et organiser votre livraison.",
   },
   {
     q: "Peut-on se faire vacciner à la pharmacie ?",

@@ -79,7 +79,7 @@ export default function Hero() {
           <motion.ul initial="h" animate="s" variants={{ s: { transition: { staggerChildren: 0.1, delayChildren: 0.9 } } }}
             className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3 lg:col-span-6 lg:col-start-7">
             {[
-              { href: "#livraison", Icon: Truck, t: "Livraison gratuite", s: "à domicile" },
+              { href: "#livraison", Icon: Truck, t: "Livraison gratuite", s: "à proximité" },
               { href: "#parapharmacie", Icon: Sparkles, t: "Pharmacie", s: "& parapharmacie" },
               { href: "#vaccination", Icon: Syringe, t: "Espace", s: "vaccination" },
             ].map(({ href, Icon, t, s }) => (

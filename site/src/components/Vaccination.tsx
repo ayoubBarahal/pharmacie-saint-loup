@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CalendarClock, Lock, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, Lock, Phone, ShieldCheck, TestTube } from "lucide-react";
 import { site } from "../data/site";
 
 export default function Vaccination() {
   const items = [
     { Icon: Lock, t: "Un espace confidentiel", d: <>Une pièce dédiée, au calme, à l'écart du comptoir.</> },
     { Icon: ShieldCheck, t: "Vaccins proposés", d: site.vaccins ? site.vaccins.join(" · ") : <span className="todo whitespace-normal">[À confirmer : grippe saisonnière, Covid-19, autres selon habilitation]</span> },
-    { Icon: CalendarClock, t: "Modalités", d: site.vaccinationModalites ?? <span className="todo whitespace-normal">[À compléter : avec ou sans rendez-vous, créneaux, documents à apporter]</span> },
+    { Icon: TestTube, t: "Tests Covid-19 et tests antigéniques", d: <>Dépistage réalisé à la pharmacie, résultat en quelques minutes.</> },
   ];
 
   return (
@@ -14,13 +14,13 @@ export default function Vaccination() {
       <div className="wrap">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
-            <span className="eyebrow">Espace vaccination</span>
+            <span className="eyebrow">Vaccination et dépistage</span>
             <h2 className="h-sec mt-5">Prenez soin de votre santé, <em className="italic text-cross">simplement.</em></h2>
             <p className="mt-6 max-w-[46ch] text-[1.08rem] text-muted">
-              Notre équipe vous accompagne dans votre parcours de prévention et vous renseigne sur les vaccinations proposées au sein de la pharmacie.
+              Notre équipe vous accompagne dans votre parcours de prévention : vaccinations, tests Covid-19 et tests antigéniques réalisés au sein de la pharmacie.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#contact" data-subject="Vaccination" className="btn-main group">Se renseigner sur la vaccination <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></a>
+              <a href="#contact" data-subject="Vaccination" className="btn-main group">Se renseigner <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></a>
               <a href={site.telephone.lien} className="btn-line"><Phone size={16} /> {site.telephone.affichage}</a>
             </div>
           </div>

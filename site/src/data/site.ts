@@ -19,7 +19,7 @@ export const site = {
   communes: ["Saint-Jean-de-Braye", "Orléans", "Semoy", "Chécy", "Combleux", "Marigny-les-Usages"],
   // Numéro confirmé par sante.fr (annuaire officiel du ministère de la Santé).
   telephone: { affichage: "02 38 54 10 96", lien: "tel:+33238541096" },
-  email: null as string | null,
+  email: "pharmaciesaintloup45@gmail.com" as string | null,
   googleMaps: "https://maps.app.goo.gl/as3J7DPdUrAFod6ZA",
   itineraire:
     "https://www.google.com/maps/dir/?api=1&destination=PHARMACIE+SAINT-LOUP%2C+127+Rue+du+Faubourg+de+Bourgogne%2C+45800+Saint-Jean-de-Braye",
@@ -33,7 +33,7 @@ export const site = {
     { jour: "Mercredi", d: 3, plages: ["09:00–12:30", "14:15–19:30"] as string[] | null },
     { jour: "Jeudi", d: 4, plages: ["09:00–12:30", "14:15–19:30"] as string[] | null },
     { jour: "Vendredi", d: 5, plages: ["09:00–12:30", "14:15–19:30"] as string[] | null },
-    { jour: "Samedi", d: 6, plages: ["09:00–12:30"] as string[] | null },
+    { jour: "Samedi", d: 6, plages: ["09:00–12:30", "14:15–19:30"] as string[] | null },
     { jour: "Dimanche", d: 0, plages: null as string[] | null },
   ],
 
@@ -44,11 +44,9 @@ export const site = {
   },
 
   vaccins: ["Covid-19", "Diphtérie-Tétanos-Poliomyélite (DTP)"] as string[] | null, // source : sante.fr, Pharmanity
-  // Vaccination sur rendez-vous, par téléphone (sante.fr).
-  vaccinationModalites: "Sur rendez-vous, par téléphone au 02 38 54 10 96. Du lundi au vendredi 9h–12h30 et 14h–19h30, le samedi 9h–12h30." as string | null,
 
-  // Nombre de pharmaciens affiché dans les chiffres-clés.
-  nbPharmaciens: 4,
+  // Nombre de membres de l'équipe affiché dans les chiffres-clés.
+  nbEquipe: 5,
 
   // Ajoutez une photo (src/assets) si souhaité.
   equipe: [
@@ -60,7 +58,6 @@ export const site = {
 
 export const nav = [
   { id: "pharmacie", label: "Notre pharmacie" },
-  { id: "equipe", label: "Équipe" },
   { id: "services", label: "Services" },
   { id: "parapharmacie", label: "Parapharmacie" },
   { id: "vaccination", label: "Vaccination" },
