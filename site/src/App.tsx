@@ -10,6 +10,7 @@ import Facts from "./components/Facts";
 import Faq from "./components/Faq";
 import Footer, { LegalModal, type LegalKey } from "./components/Footer";
 import Header from "./components/Header";
+import Ordonnance from "./components/Ordonnance";
 import Hero from "./components/Hero";
 import Parapharmacie from "./components/Parapharmacie";
 import Services from "./components/Services";
@@ -86,6 +87,7 @@ export default function App() {
         <Facts />
         <About />
         <Services />
+        <Ordonnance onPrivacy={() => setLegal("privacy")} />
         <Parapharmacie />
         <Delivery />
         <Vaccination />

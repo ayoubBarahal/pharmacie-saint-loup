@@ -19,9 +19,10 @@ const content: Record<Exclude<LegalKey, null>, { title: string; body: ReactNode 
   </>) },
   privacy: { title: "Confidentialité", body: (<>
     <p>Les données saisies dans le formulaire de contact (nom, coordonnées, message) servent uniquement à répondre à votre demande. Elles ne sont ni vendues ni cédées.</p>
+    <h4>Envoi d'ordonnance</h4><p>Les informations transmises avec une ordonnance (nom, prénom, date de naissance, téléphone, document) sont des données de santé. Elles sont traitées avec votre consentement explicite, uniquement pour préparer votre traitement, et ne sont accessibles qu'à l'équipe de la pharmacie. Le message et les fichiers sont supprimés de la messagerie une fois le traitement délivré.</p>
     <h4>Responsable du traitement</h4><p>Soufiane Ouârab, pharmacien titulaire.</p>
     <h4>Vos droits</h4><p>Droit d'accès, de rectification et d'effacement, à exercer auprès de la pharmacie. Réclamation possible auprès de la CNIL.</p>
-    <h4>Données de santé</h4><p>Ce formulaire n'est pas conçu pour recevoir des données de santé. Merci de ne pas y transmettre d'ordonnance ni d'information médicale.</p>
+    <h4>Données de santé</h4><p>Le formulaire de contact n'est pas conçu pour recevoir des données de santé : pour une ordonnance, utilisez la rubrique dédiée.</p>
   </>) },
   cookies: { title: "Cookies", body: (<p>Cette version du site ne dépose aucun cookie de mesure d'audience ni publicitaire. Si un outil de statistiques ou un module tiers est ajouté, un bandeau de consentement devra être mis en place avant tout dépôt.</p>) },
 };

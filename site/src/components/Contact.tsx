@@ -94,7 +94,7 @@ export default function Contact({ onPrivacy }: { onPrivacy: () => void }) {
         <form onSubmit={submit} noValidate className="relative overflow-hidden rounded-[30px] border border-line bg-white p-6 shadow-[0_30px_80px_-50px_rgba(19,33,28,.4)] sm:p-10 lg:col-span-7">
           <div className="flex gap-3 rounded-2xl bg-peach/50 p-4 text-[14px] text-[#6B4320]">
             <ShieldAlert size={18} className="mt-0.5 shrink-0" />
-            <p>Merci de ne pas transmettre d'ordonnance, de résultats d'analyse ni d'information médicale sensible par ce formulaire. Pour cela, appelez-nous ou venez à l'officine.</p>
+            <p>Merci de ne pas transmettre de résultats d'analyse ni d'information médicale sensible par ce formulaire. Pour une ordonnance, utilisez la rubrique <a href="#ordonnance" className="underline underline-offset-4">Envoyer une ordonnance</a>.</p>
           </div>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <div><label htmlFor="f-nom" className="mb-2 block text-[14px] font-medium">Nom et prénom</label>

@@ -56,9 +56,10 @@ export const site = {
   ],
 };
 
-export const nav = [
+export const nav: { id: string; label: string; large?: boolean }[] = [
   { id: "pharmacie", label: "Notre pharmacie" },
   { id: "services", label: "Services" },
+  { id: "ordonnance", label: "Ordonnance", large: true },
   { id: "parapharmacie", label: "Parapharmacie" },
   { id: "vaccination", label: "Vaccination" },
   { id: "teleconsultation", label: "Téléconsultation" },

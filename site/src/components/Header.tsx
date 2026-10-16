@@ -51,7 +51,7 @@ export default function Header() {
           <Logo />
           <nav aria-label="Navigation principale" className="ml-auto hidden items-center gap-1 lg:flex">
             {nav.map((n) => (
-              <a key={n.id} href={`#${n.id}`} className="relative rounded-full px-3.5 py-2 text-[14px] text-ink/75 transition-colors hover:text-ink">
+              <a key={n.id} href={`#${n.id}`} className={cn("relative rounded-full px-3.5 py-2 text-[14px] text-ink/75 transition-colors hover:text-ink", n.large && "hidden xl:block")}>
                 {active === n.id && (
                   <motion.span layoutId="navpill" className="absolute inset-0 rounded-full bg-cross-soft" transition={{ type: "spring", bounce: 0.2, duration: 0.5 }} />
                 )}

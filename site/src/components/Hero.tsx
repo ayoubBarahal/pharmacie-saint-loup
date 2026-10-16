@@ -98,7 +98,7 @@ export default function Hero() {
         <RotatingBadge />
         <div className="hero-frame grain relative h-[clamp(380px,72svh,920px)] sm:h-[clamp(440px,86vh,920px)] overflow-hidden rounded-[28px] [clip-path:inset(0_0_0_0_round_28px)]">
           <img src={facade} alt="Façade verte de la Pharmacie Saint-Loup, rue du Faubourg de Bourgogne à Saint-Jean-de-Braye"
-            fetchPriority="high" className="hero-img absolute inset-0 h-full w-full object-cover object-[50%_46%]" />
+            {...{ fetchpriority: "high" }} className="hero-img absolute inset-0 h-full w-full object-cover object-[50%_46%]" />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/35 to-transparent" />
           <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-end justify-between gap-3 text-white sm:bottom-8 sm:left-8 sm:right-8">
             <p className="max-w-[24ch] font-display text-[clamp(1.5rem,2.6vw,2.4rem)] italic leading-tight">Au cœur du quartier Saint-Loup.</p>
