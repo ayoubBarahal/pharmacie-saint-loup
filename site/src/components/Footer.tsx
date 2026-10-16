@@ -15,7 +15,7 @@ const content: Record<Exclude<LegalKey, null>, { title: string; body: ReactNode 
     <h4>Licence et autorités</h4><p>N° de licence : <T>[À compléter]</T> · Agence Régionale de Santé Centre-Val de Loire · Ordre national des pharmaciens.</p>
     <h4>Directeur de la publication</h4><p><T>[À compléter]</T></p>
     <h4>Hébergeur</h4><p><T>[À compléter : nom, adresse, téléphone]</T></p>
-    <h4>Crédits</h4><p>Photographies : Pharmacie Saint-Loup. Composants adaptés de SmoothUI et Magic UI (licence MIT).</p>
+    <h4>Crédits</h4><p>Conception et développement du site : Ing. Ayoub Barahal. Photographies : Pharmacie Saint-Loup. Composants adaptés de SmoothUI et Magic UI (licence MIT).</p>
   </>) },
   privacy: { title: "Confidentialité", body: (<>
     <p>Les données saisies dans le formulaire de contact (nom, coordonnées, message) servent uniquement à répondre à votre demande. Elles ne sont ni vendues ni cédées.</p>
@@ -81,7 +81,7 @@ export default function Footer({ onLegal }: { onLegal: (k: LegalKey) => void }) 
         </div>
       </div>
       <div className="wrap flex flex-wrap items-center justify-between gap-4 border-t border-ink/10 py-6 text-[13px] text-muted">
-        <span>© {new Date().getFullYear()} {site.nom}</span>
+        <span>© {new Date().getFullYear()} {site.nom} · Site réalisé par Ing. Ayoub Barahal</span>
         <div className="flex flex-wrap gap-5">
           <button onClick={() => onLegal("legal")} className="py-2 hover:text-ink">Mentions légales</button>
           <button onClick={() => onLegal("privacy")} className="py-2 hover:text-ink">Confidentialité</button>

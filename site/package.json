@@ -9,7 +9,7 @@
     "preview": "SINGLE=1 vite build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ayoub Barahal",
   "license": "ISC",
   "dependencies": {
     "@gsap/react": "^2.1.2",
