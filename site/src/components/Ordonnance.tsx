@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Check, FileText, Loader2, Lock, Store, Upload, X } from "lucide-react";
+import { ArrowRight, Check, ExternalLink, FileText, Loader2, Lock, MessageCircle, Store, Upload, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type DragEvent, type FormEvent } from "react";
 import { site } from "../data/site";
 import { cn } from "../lib/cn";
@@ -113,6 +113,15 @@ export default function Ordonnance({ onPrivacy }: { onPrivacy: () => void }) {
               </li>
             ))}
           </ol>
+          <a href={site.doctolib} target="_blank" rel="noopener noreferrer"
+            className="group mt-8 flex items-center gap-4 rounded-2xl border border-line bg-white p-5 transition hover:border-cross/50">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cross-soft text-cross-deep"><MessageCircle size={17} /></span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[15px] font-medium">Vous utilisez Doctolib ?</span>
+              <span className="mt-0.5 block text-[14px] text-muted">Vous pouvez aussi contacter la pharmacie directement sur Doctolib.</span>
+            </span>
+            <ExternalLink size={16} className="shrink-0 text-cross-deep transition group-hover:translate-x-0.5" />
+          </a>
         </div>
 
         <form onSubmit={submit} noValidate className="relative overflow-hidden rounded-[30px] border border-line bg-white p-6 shadow-[0_30px_80px_-50px_rgba(19,33,28,.4)] sm:p-10 lg:col-span-7">

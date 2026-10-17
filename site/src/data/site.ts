@@ -23,7 +23,11 @@ export const site = {
   googleMaps: "https://maps.app.goo.gl/as3J7DPdUrAFod6ZA",
   itineraire:
     "https://www.google.com/maps/dir/?api=1&destination=PHARMACIE+SAINT-LOUP%2C+127+Rue+du+Faubourg+de+Bourgogne%2C+45800+Saint-Jean-de-Braye",
-  reseaux: [] as { nom: string; url: string }[],
+  doctolib: "https://www.doctolib.fr/pharmacie/saint-jean-de-braye/pharmacie-saint-loup-saint-jean-de-braye",
+  reseaux: [
+    { nom: "Facebook", url: "https://www.facebook.com/share/1FbVfk1Y7n/" },
+    { nom: "TikTok", url: "https://www.tiktok.com/@pharmaciesaintloup" },
+  ] as { nom: string; url: string }[],
 
   // Horaires relevés sur Pharmanity, 118712 et sante.fr (à confirmer sur place).
   // null = fermé. Exemple : ["08:30–12:30", "14:00–19:30"]

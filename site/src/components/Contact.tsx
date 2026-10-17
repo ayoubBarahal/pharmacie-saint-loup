@@ -71,7 +71,7 @@ export default function Contact({ onPrivacy }: { onPrivacy: () => void }) {
     { Icon: Phone, k: "Téléphone", v: <a href={site.telephone.lien} className="hover:text-cross">{site.telephone.affichage}</a> },
     ...(site.email ? [{ Icon: Mail, k: "E-mail", v: <a href={`mailto:${site.email}`}>{site.email}</a> }] : []),
     { Icon: MapPin, k: "Adresse", v: <a href={site.googleMaps} target="_blank" rel="noopener" className="hover:text-cross">{site.adresse.rue}, {site.adresse.cp} {site.adresse.ville}</a> },
-    ...(site.reseaux.length ? [{ Icon: Share2, k: "Réseaux sociaux", v: site.reseaux.map((r) => <a key={r.url} href={r.url} className="mr-3 underline">{r.nom}</a>) }] : []),
+    ...(site.reseaux.length ? [{ Icon: Share2, k: "Réseaux sociaux", v: site.reseaux.map((r) => <a key={r.url} href={r.url} target="_blank" rel="noopener" className="mr-3 underline underline-offset-4 hover:text-cross">{r.nom}</a>) }] : []),
   ];
 
   return (

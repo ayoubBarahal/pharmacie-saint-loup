@@ -71,6 +71,7 @@ export default function Footer({ onLegal }: { onLegal: (k: LegalKey) => void }) 
             <li><a href={site.telephone.lien} className="hover:text-cross">{site.telephone.affichage}</a></li>
             {site.email && <li><a href={`mailto:${site.email}`} className="hover:text-cross">{site.email}</a></li>}
             <li><a href={site.googleMaps} target="_blank" rel="noopener" className="underline underline-offset-4 hover:text-cross">Voir sur Google Maps</a></li>
+            {site.reseaux.length > 0 && <li className="flex flex-wrap gap-x-4">{site.reseaux.map((r) => <a key={r.url} href={r.url} target="_blank" rel="noopener" className="underline underline-offset-4 hover:text-cross">{r.nom}</a>)}</li>}
           </ul>
         </div>
         <div className="lg:col-span-3">

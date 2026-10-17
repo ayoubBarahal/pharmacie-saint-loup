@@ -23,9 +23,9 @@ export default function Teleconsultation() {
     <section id="teleconsultation" ref={root} className="bg-white py-[clamp(90px,12vw,170px)]">
       <div className="wrap grid grid-cols-1 gap-14 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
-          <div className="tc-media relative aspect-[4/5] overflow-hidden rounded-[28px] sm:aspect-[3/4]">
-            <img src={teleconsultation} alt="Cabine de téléconsultation Medadom de la Pharmacie Saint-Loup, avec écran, instruments de mesure et casque" loading="lazy"
-              className="tc-img absolute inset-0 h-full w-full object-cover object-[60%_50%]" />
+          <div className="tc-media relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#211452] sm:aspect-[3/4]">
+            <img src={teleconsultation} alt="Logo du service de téléconsultation de la Pharmacie Saint-Loup" loading="lazy"
+              className="tc-img absolute inset-0 m-auto h-[70%] w-[70%] object-contain" />
           </div>
         </div>
         <div className="lg:col-span-6 lg:col-start-7">

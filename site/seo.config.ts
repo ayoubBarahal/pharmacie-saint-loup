@@ -45,6 +45,7 @@ function jsonLd(url: string) {
     },
     geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
     hasMap: site.googleMaps,
+    sameAs: [...site.reseaux.map((r) => r.url), site.doctolib],
     openingHoursSpecification: openingHours(),
     areaServed: site.communes.map((name) => ({ "@type": "City", name })),
     amenityFeature: [

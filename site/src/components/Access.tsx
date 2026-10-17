@@ -85,7 +85,7 @@ export default function Access() {
                 <li className="flex gap-3"><Car size={17} className="mt-1 shrink-0 text-cross" /><span>Stationnement : parking de la pharmacie réservé à notre clientèle, voitures et vélos.</span></li>
               </ul>
               <img src={parking} alt="Panneau « Parking pharmacie, réservé à notre clientèle » pour voitures et vélos" loading="lazy"
-                className="mt-6 aspect-[16/9] w-full rounded-2xl object-cover object-[50%_45%]" />
+                className="mt-6 aspect-[3/2] w-full rounded-2xl object-cover" />
             </div>
           </div>
         </div>
