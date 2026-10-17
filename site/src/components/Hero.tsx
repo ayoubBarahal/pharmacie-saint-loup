@@ -56,7 +56,7 @@ export default function Hero() {
       <div className="wrap relative">
         <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}
           className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/10 pb-5">
-          <span className="flex flex-wrap items-center gap-3"><h1 className="eyebrow !font-mono !tracking-[0.18em]">Pharmacie Saint-Loup · {site.adresse.ville}, près d'Orléans</h1><OpenStatus /></span>
+          <span className="flex flex-wrap items-center gap-3"><h1 className="eyebrow !font-mono !tracking-[0.18em]">Pharmacie Saint-Loup · {site.adresse.ville} / Orléans</h1><OpenStatus /></span>
           <a href="#acces" className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted hover:text-ink">
             <MapPin size={13} /> {site.adresse.rue}
           </a>
