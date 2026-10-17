@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Accessibility, ArrowUpRight, Droplets, HeartPulse, MessagesSquare, Plus, Syringe, Truck, Leaf } from "lucide-react";
+import { Accessibility, Activity, ArrowUpRight, Droplets, HeartPulse, MessagesSquare, PawPrint, Plus, Syringe, Truck, Leaf } from "lucide-react";
 import { useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "../lib/cn";
@@ -14,7 +14,9 @@ const services: Svc[] = [
   { Icon: HeartPulse, t: "Prévention et accompagnement", d: "Hygiène de vie, suivi des traitements au long cours.", more: "Bilan de prévention sans rendez-vous, aux horaires d'ouverture de la pharmacie.", ok: true, cls: "" },
   { Icon: Droplets, t: "Conseil en dermocosmétique", d: "Un avis sur votre peau et une routine adaptée.", more: "CeraVe, La Roche-Posay, Avène, Klorane… : demandez conseil à l'équipe pour choisir une routine adaptée.", ok: true, cls: "" },
   { Icon: Leaf, t: "Hygiène et bien-être", d: "Soins du quotidien, sommeil, vitalité, confort.", more: "Retrouvez nos rayons dans la section Parapharmacie.", ok: true, cls: "lg:col-span-2", href: "#parapharmacie" },
-  { Icon: Accessibility, t: "Matériel médical", d: "Maintien à domicile et aide à la mobilité.", more: "Chaussures de confort, orthopédie et matériel de maintien à domicile : renseignez-vous au comptoir.", ok: true, cls: "lg:col-span-2" },
+  { Icon: Accessibility, t: "Matériel médical", d: "Orthopédie, confort et aide à la mobilité.", more: "Chaussures de confort, orthopédie et aides à la mobilité : renseignez-vous au comptoir.", ok: true, cls: "lg:col-span-2" },
+  { Icon: PawPrint, t: "Pharmacie vétérinaire", d: "Des soins pour vos animaux de compagnie.", more: "Antiparasitaires, vermifuges et médicaments vétérinaires, y compris sur ordonnance : demandez conseil à l'équipe.", ok: true, cls: "lg:col-span-2" },
+  { Icon: Activity, t: "Mesure de la tension artérielle", d: "Contrôlez votre tension à la pharmacie.", more: "Une mesure au calme, avec le conseil du pharmacien et une orientation vers votre médecin si nécessaire.", ok: true, cls: "lg:col-span-2" },
 ];
 
 function Card({ s, i }: { s: Svc; i: number }) {
